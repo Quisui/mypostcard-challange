@@ -21,7 +21,7 @@ class MyPostCardUnitTest extends TestCase
     {
         $result = $this->getExternalDesignRequestData('https://appmsds-6aa0.kxcdn.com/content.php');
         $this->assertIsArray($result);
-        $this->assertContainsEquals($result['content'][0]['title'], ['title' => 'Happy Birthday! Too old for Leo']);
+        $this->assertContainsEquals($result['content'][0]['title'], ['title' => 'Abstand schafft Nähe']);
     }
 
     public function testRequestCanHaveOptions()

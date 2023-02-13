@@ -41,6 +41,8 @@ RUN cp -rf /var/www/docker/start.sh /usr/local/bin/start
 
 RUN chmod -R 777 /usr/local/bin/start
 
+RUN chown -R www-data:www-data /var/www
+
 RUN a2enmod rewrite
 
 RUN php artisan storage:link
