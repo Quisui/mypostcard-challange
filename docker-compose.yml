@@ -1,0 +1,35 @@
+version: '3.8'
+services:
+    main:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        container_name: my_postcard
+        image: my_postcard:latest
+        working_dir: /var/www/
+        restart: unless-stopped
+        volumes:
+            - ./:/var/www
+        ports:
+            - 8085:80
+        env_file:
+            - .env
+    main_queue:
+        container_name: my_postcard_queue
+        image: my_postcard:latest
+        volumes:
+            - ./:/var/www
+        env_file:
+            - .env
+        environment:
+            - CONTAINER_ROLE=queue
+    redis:
+      container_name: postcard_redis
+      image: redis:4-alpine
+      ports:
+        - 16379:6379
+      volumes:
+        - redis:/data
+volumes:
+    redis:
+        driver: "local"
