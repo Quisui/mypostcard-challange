@@ -10,7 +10,7 @@
             <div class="overflow-hidden bg-white shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
                     <div class="overflow-hidden overflow-x-auto mb-4 min-w-full align-middle sm:rounded-md">
-                        <table class="min-w-full border divide-y divide-gray-200">
+                        <table class="min-w-full mt-1 border divide-y divide-gray-200">
                             <thead>
                                 <tr>
                                     @foreach ($tableItems as $item)
@@ -34,7 +34,9 @@
                                         </td>
                                         <td class="px-6 py-4 text-sm leading-5 text-gray-900 whitespace-no-wrap">
                                             @if (!empty($dataItem['thumb_url']))
-                                                @livewire('image-component', ['dataItem' => $dataItem], key($dataItem['id']))
+                                                <a style="cursor: pointer;" wire:click.prevent="export('pdf', '{{$dataItem['id']}}')">
+                                                    @livewire('image-component', ['dataItem' => $dataItem], key($dataItem['id']))
+                                                </a>
                                             @endif
                                         </td>
                                         <td class="px-6 py-4 text-sm leading-5 text-gray-900 whitespace-no-wrap">

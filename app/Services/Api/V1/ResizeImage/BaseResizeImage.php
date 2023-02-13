@@ -52,7 +52,7 @@ class BaseResizeImage implements ResizeImagesInterface
         }
     }
 
-    protected function getImagePath(string $imageInternalPath)
+    public function getImagePath(string $imageInternalPath)
     {
         return Storage::disk('public')->path($imageInternalPath);
     }
