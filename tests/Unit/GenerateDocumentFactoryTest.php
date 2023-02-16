@@ -4,12 +4,14 @@ namespace Tests\Unit;
 
 use App\Services\Api\V1\GenerateDocument\GenerateDocument;
 use App\Services\Api\V1\ResizeImage\BaseResizeImage;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Storage;
 use Tests\TestCase;
 use Intervention\Image\Facades\Image;
 
 class GenerateDocumentFactoryTest extends TestCase
 {
+    use RefreshDatabase;
     /**
      * A basic unit test example.
      *
