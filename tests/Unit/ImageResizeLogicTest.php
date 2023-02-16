@@ -10,6 +10,8 @@ use Tests\TestCase;
 
 class ImageResizeLogicTest extends TestCase
 {
+    use RefreshDatabase;
+    
     public function testImageCannotBeSaved()
     {
         $this->expectExceptionMessage('Error Processing Request, missing values = [imageId?, externalImage?]');
