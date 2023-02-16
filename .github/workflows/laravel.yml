@@ -20,6 +20,10 @@ jobs:
       run: php -r "file_exists('.env') || copy('.env.example', '.env');"
     - name: Install Dependencies
       run: composer update
+    - name: Install Dependencies 2
+      run: npm install
+    - name: Install Dependencies 2
+      run: npm run build
     - name: Generate key
       run: php artisan key:generate
     - name: Directory Permissions
