@@ -22,7 +22,7 @@ jobs:
       run: composer update
     - name: Install Dependencies 2
       run: npm install
-    - name: Install Dependencies 2
+    - name: Build
       run: npm run build
     - name: Generate key
       run: php artisan key:generate
